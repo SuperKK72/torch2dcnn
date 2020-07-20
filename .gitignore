@@ -1,0 +1,8 @@
+dcnn_inference_result/*
+torch_classes/*
+torch_images/*
+torch_inference_result/*
+torch_models/*
+torch_models_new/*
+torch2dcnn_compare_result/*
+.idea/*
