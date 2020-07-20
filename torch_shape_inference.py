@@ -74,8 +74,16 @@ if __name__ == '__main__':
             info.pop('trainable')
         if 'nb_params' in info:
             info.pop('nb_params')
-    # for layer_name, info in netStructureSimple.items():
-    #     print("layer name: {}\tlayer info: {}".format(layer_name, info))
-    print(json.dumps(netStructureSimple))
+    for layer_name, info in netStructureSimple.items():
+        print("layer name: {}\t".format(layer_name))
+        for k, v in info.items():
+            print('\t' + k, v)
+    jsonOutput = json.dumps(netStructureSimple)
+    # print(type(jsonOutput))
+    jsonFilePath = "./torch_json/LPRNet.json"
+    jsonFile = open(jsonFilePath, 'w', encoding='utf-8')
+    json.dump(jsonOutput, jsonFile)
+
+
 
 
